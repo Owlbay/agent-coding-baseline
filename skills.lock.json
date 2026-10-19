@@ -2,15 +2,15 @@
   "upstreams": {
     "jakubkrehel-skills": {
       "repository": "https://github.com/jakubkrehel/skills",
-      "commit": "c0588bb6d654eb725046f0bf9deec338c34891ab",
-      "committedAt": "2026-10-10T21:15:26-04:00",
-      "syncedAt": "2026-10-12T06:57:26+00:00"
+      "commit": "4c66b1fa86e9ab70187b43d7da9b6fdb29f2ef63",
+      "committedAt": "2026-10-12T22:06:01-04:00",
+      "syncedAt": "2026-10-19T05:42:52+00:00"
     },
     "impeccable": {
       "repository": "https://github.com/pbakaus/impeccable",
-      "commit": "c63b8dd7dd5a5f3c32eaabe1af76d0694f863ed2",
-      "committedAt": "2026-10-11T17:54:34+09:00",
-      "syncedAt": "2026-10-12T06:57:28+00:00"
+      "commit": "0665bd812ae0908fcab17b96fd4f840defb882d9",
+      "committedAt": "2026-10-19T09:59:14+09:00",
+      "syncedAt": "2026-10-19T05:42:54+00:00"
     },
     "vercel-agent-skills": {
       "repository": "https://github.com/vercel-labs/agent-skills",
