@@ -8,4 +8,8 @@
 | `status/` | 已验证的进度 |
 | `history/`、`research/` | 只用于追溯，不作为现状依据 |
 
+| 文档 | 内容 |
+| --- | --- |
+| [design/spacing.md](design/spacing.md) | UI 间距层级：语义 token 与规则 |
+
 新增文档在此登记。
