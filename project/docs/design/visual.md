@@ -1,6 +1,6 @@
-# 视觉体系
+# Owlbay Quiet 视觉体系
 
-安静、精确的数据界面：中性灰面、四阶墨色、一种强调色（陶土橙）、细线分结构、投影分层次、竖线外框加虚线分区、Inter 加 Geist Mono、快而克制的动效。密度与精度参照 Linear，配色与外框是自己的体系。
+Owlbay Quiet：安静、精确的数据界面。中性灰面、四阶墨色、一种强调色（陶土橙）、细线分结构、投影分层次、竖线外框加虚线分区、Inter 加 Geist Mono、快而克制的动效。密度与精度参照 Linear，配色与外框是自己的体系。
 
 取值只在 [tokens.css](tokens.css)（复制到 `src/styles/tokens.css`），间距层级见 [spacing.md](spacing.md)。每条规则都能被检查：违反即 `scripts/check-design.mjs` 失败，或在自查时能被指出。
 
