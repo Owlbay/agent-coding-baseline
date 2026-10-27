@@ -5,7 +5,7 @@
  *        ease-in 缓动、scale(0) 入场、超过 300ms 的字面时长、带模糊/扩散的字面投影。
  * 确有必要的例外，在同一行加注释 design-ok 并写明原因。
  *
- * 扫描 src/ 下的 .css 与 .astro / .vue / .svelte 的 <style> 块；任何名为 tokens.css 的文件跳过。
+ * 扫描 src/ 下的 .css 与 .astro / .vue / .svelte 的 <style> 块；名为 tokens.css 或 *.tokens.css 的文件跳过。
  * 用法：node scripts/check-design.mjs（建议接进 package.json 的 check 脚本）
  */
 import fs from 'node:fs';
@@ -108,7 +108,7 @@ if (!fs.existsSync(srcDir)) {
 }
 for (const file of walk(srcDir)) {
   const rel = path.relative(root, file).split(path.sep).join('/');
-  if (path.basename(rel) === 'tokens.css') continue;
+  if (/(^|\.)tokens\.css$/.test(path.basename(rel))) continue;
   const text = fs.readFileSync(file, 'utf8');
   for (const [start, css] of styleBlocks(file, text)) {
     css.split('\n').forEach((line, i) => {
