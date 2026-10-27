@@ -10,6 +10,8 @@
 
 | 文档 | 内容 |
 | --- | --- |
+| [design/visual.md](design/visual.md) | Owlbay Quiet 视觉体系：颜色、字体、形状、外框结构、组件配方、页面模式、动效与检查 |
+| [design/tokens.css](design/tokens.css) | 设计 token 模板，复制到 `src/styles/` 使用 |
 | [design/spacing.md](design/spacing.md) | UI 间距层级：语义 token 与规则 |
 
 新增文档在此登记。

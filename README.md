@@ -7,7 +7,9 @@ Agent 编程（Claude Code / Codex）的个人基准仓库：统一个人偏好�
 | 内容 | 来源 | 安装位置 |
 | --- | --- | --- |
 | 个人偏好 | `user/claude/CLAUDE.md`、`user/codex/AGENTS.md` | `~/.claude/`、`~/.codex/` |
+| UI 视觉体系（Owlbay Quiet）与 token 模板 | `project/docs/design/visual.md`、`tokens.css` | 新项目 `docs/design/` |
 | UI 间距层级规范 | `project/docs/design/spacing.md` | 新项目 `docs/design/` |
+| 设计约束检查 | `project/scripts/check-design.mjs` | 新项目 `scripts/` |
 | commit 规范（`/commit`） | `user/claude/commands/commit.md` | `~/.claude/commands/` |
 | better-* 等 11 个 skill | [jakubkrehel/skills](https://github.com/jakubkrehel/skills)（MIT） | 用户级 `~/.claude/skills/` |
 | web-design-guidelines | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)（MIT） | 用户级 `~/.claude/skills/` |
