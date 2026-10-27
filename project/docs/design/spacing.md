@@ -6,7 +6,7 @@
 
 ## 刻度
 
-4px 基数：`2 / 4 / 6 / 8 / 12 / 16 / 20 / 24 / 32 / 40 / 48`，整页留白与首屏另可用 `64 / 96`。不写刻度以外的值；对应变量见 [tokens.css](tokens.css)。
+4px 基数：`2 / 4 / 6 / 8 / 12 / 16 / 20 / 24 / 32 / 40 / 48`，整页留白与首屏另可用 `64 / 96`。不写刻度以外的值；对应变量见所选风格的 token 文件（[quiet.tokens.css](quiet.tokens.css) / [terminal.tokens.css](terminal.tokens.css)）。
 
 ## 语义 token
 

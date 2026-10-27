@@ -1,4 +1,4 @@
-/* 设计 token 模板（Owlbay Quiet 视觉体系，规则见 docs/design/visual.md，间距层级见 docs/design/spacing.md）。
+/* 设计 token 模板（Owlbay Quiet 视觉体系，规则见 docs/design/quiet.md，间距层级见 docs/design/spacing.md）。
    用法：复制到 src/styles/tokens.css 并最先引入；换品牌色只改 --accent* 一组（深浅各一份）与 --selection、--shadow-focus。
    组件只引用变量，不写字面值；scripts/check-design.mjs 负责拦截。
    命名：--surface-* 为面的原始阶梯，--bg* / --ink* / --line* / --accent* 为角色名，组件只用角色名。 */
