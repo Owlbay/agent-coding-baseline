@@ -24,4 +24,4 @@
 - 启动与环境变量：<docs/guides/development.md>
 - 文档索引：[docs/README.md](docs/README.md)
 - 检查命令：<例：`pnpm check` / `pnpm test` / `pnpm typecheck`>
-- 改动 UI 后在浏览器预览中自查；间距按 [间距层级](docs/design/spacing.md)；改动结构后跑完整检查。
+- 改动 UI 后在浏览器预览中自查；视觉按 [视觉体系](docs/design/visual.md)，间距按 [间距层级](docs/design/spacing.md)，样式只引用 tokens（`node scripts/check-design.mjs` 拦截字面值）；改动结构后跑完整检查。

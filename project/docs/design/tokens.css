@@ -1,0 +1,232 @@
+/* 设计 token 模板（Owlbay 视觉体系，规则见 docs/design/visual.md，间距层级见 docs/design/spacing.md）。
+   用法：复制到 src/styles/tokens.css 并最先引入；换品牌色只改 --accent* 一组（深浅各一份）与 --selection、--shadow-focus。
+   组件只引用变量，不写字面值；scripts/check-design.mjs 负责拦截。
+   命名：--surface-* 为面的原始阶梯，--bg* / --ink* / --line* / --accent* 为角色名，组件只用角色名。 */
+
+:root {
+  color-scheme: dark;
+
+  /* 面：由底到顶五级，中性灰，不带色偏 */
+  --surface-0: #161616; /* 页面 */
+  --surface-1: #1b1b1b; /* 下沉：代码块、输入框、吸顶列 */
+  --surface-2: #202020; /* 卡片 */
+  --surface-3: #262626; /* 菜单、弹层 */
+  --surface-4: #2d2d2d; /* 悬浮、分段控件当前项 */
+  --bg: var(--surface-0);
+  --bg-raised: var(--surface-1);
+  --bg-card: var(--surface-2);
+  --bg-panel: var(--surface-3);
+  --bg-elevated: var(--surface-4);
+  --bg-input: var(--surface-1);
+  --bg-translucent: rgba(22, 22, 22, 0.76); /* 毛玻璃底：顶栏、吸顶工具栏 */
+
+  /* 字：四阶，第四阶只做装饰（禁用态、背景纹理），不承载需要阅读的文字 */
+  --ink: #f2f2f2;
+  --ink-2: #cdcdcd;
+  --ink-3: #999999;
+  --ink-4: #6a6a6a;
+  --on-accent: #ffffff;
+
+  /* 线：半透明白，只画结构 */
+  --line-soft: rgba(255, 255, 255, 0.05);
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.13);
+
+  /* 强调：陶土橙，只用于焦点环、主按钮、当前导航指示、选中底、正文链接、强调性数据 */
+  --accent: #d27a52;
+  --accent-ui: #b35a35; /* 主按钮底、焦点环、当前位置指示 */
+  --accent-text: #e3906a; /* 深底上的文字与图标 */
+  --accent-deep: #9c4c2b; /* 主按钮 hover / 按下 */
+  --accent-tint: rgba(210, 122, 82, 0.16); /* 选中底 */
+  --accent-soft: rgba(210, 122, 82, 0.32); /* 焦点环光晕、链接下划线 */
+  --accent-glow: rgba(210, 122, 82, 0.1); /* 页顶微光、点亮纹理 */
+
+  /* 态 */
+  --hover-row: rgba(255, 255, 255, 0.04); /* 行 hover */
+  --hover-row-solid: #202020; /* 与 --hover-row 叠在 --bg 上相同的不透明色，供需要遮挡下层的固定列使用 */
+  --hover-strong: rgba(255, 255, 255, 0.07); /* 控件 hover */
+  --pressed: rgba(255, 255, 255, 0.1);
+  --selected-bg: var(--accent-tint);
+  --selected-ink: var(--ink);
+  --selection: rgba(210, 122, 82, 0.38);
+  --focus: var(--accent-ui);
+  --scrollbar: rgba(255, 255, 255, 0.14);
+
+  /* 圆角：4 / 6 / 8 / 12 / 16 + 胶囊；嵌套时外 = 内 + 内距 */
+  --radius-1: 4px; /* 芯片、键帽、菜单项 */
+  --radius-2: 6px; /* 小控件、分段项 */
+  --radius-3: 8px; /* 按钮、输入框、菜单面板 */
+  --radius-4: 12px; /* 卡片 */
+  --radius-5: 16px; /* 大卡片、对话框 */
+  --radius-pill: 999px;
+
+  /* 投影：只表达层次；1px 结构线仍用 border。深色面附一条 1px 内侧顶部高光 */
+  --shadow-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  --shadow-ring: 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-1: inset 0 1px 0 0 rgba(255, 255, 255, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-2: inset 0 1px 0 0 rgba(255, 255, 255, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.5), 0 10px 28px -6px rgba(0, 0, 0, 0.6);
+  --shadow-3: inset 0 1px 0 0 rgba(255, 255, 255, 0.06), 0 6px 16px -4px rgba(0, 0, 0, 0.55), 0 24px 64px -12px rgba(0, 0, 0, 0.7);
+  --shadow-kbd: inset 0 -1px 0 0 rgba(255, 255, 255, 0.08);
+  --shadow-focus: 0 0 0 3px rgba(210, 122, 82, 0.32);
+
+  /* 字体：Inter（界面、标题，opsz 光学尺寸自动）+ Geist Mono（数据）；CJK 回退到系统字体 */
+  --font-sans: "Inter Variable", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "SF Mono", Menlo, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", monospace;
+  --fw-regular: 400;
+  --fw-medium: 510;
+  --fw-semibold: 590;
+
+  /* 字号阶梯：界面 13–15，正文 15–16，数据等宽 12–13 */
+  --fs-display: clamp(36px, 1.5rem + 3vw, 64px);
+  --fs-display-sm: clamp(32px, 9vw, 36px); /* ≤640 的首屏标题 */
+  --fs-h1: clamp(28px, 1.4rem + 0.75vw, 36px);
+  --fs-h2: 20px;
+  --fs-h3: 18px;
+  --fs-body-lg: 17px;
+  --fs-body: 15px;
+  --fs-body-sm: 13px;
+  --fs-prose: 16px;
+  --fs-ui: 14px; /* 控件、面板条目 */
+  --fs-caption: 13px;
+  --fs-label: 12px; /* 表头、小标签、眉题 */
+  --fs-mono: 13px;
+  --fs-mono-sm: 12px;
+  --fs-mono-xs: 11px;
+  --fs-code: 13px;
+  --fs-input-touch: 16px; /* 触屏输入框下限，避免 iOS 聚焦缩放 */
+  --lh-body-lg: 26px;
+  --lh-body: 24px;
+  --lh-body-sm: 20px;
+  --lh-prose: 26px;
+  --lh-ui: 20px;
+  --lh-caption: 18px;
+  --lh-label: 16px;
+  --lh-mono: 20px;
+  --lh-mono-sm: 18px;
+  --lh-mono-xs: 16px;
+  --lh-code: 1.6;
+  /* 字距：大字号收紧，小标签放宽；等宽不调 */
+  --ls-display: -0.03em;
+  --ls-h1: -0.025em;
+  --ls-h2: -0.015em;
+  --ls-body: -0.006em;
+  --ls-label: 0.02em;
+
+  /* 间距刻度（4px 基数，见 spacing.md）；64 / 96 只用于整页留白与首屏 */
+  --sp-0-5: 2px;
+  --sp-1: 4px;
+  --sp-1-5: 6px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-4-5: 20px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-6-5: 40px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+
+  /* 间距语义层级（spacing.md）：容器层用这些，叶子层用刻度 */
+  --space-item: var(--sp-1); /* 控件或一行之内 */
+  --space-group: var(--sp-2); /* 同组并列；标题与内容 */
+  --space-inset: var(--sp-3); /* 卡片、行、小面板内边距 */
+  --space-block: var(--sp-4); /* 区块内子块之间 */
+  --space-section: var(--sp-5); /* 不同主题区块之间 */
+  --space-page: var(--sp-4); /* 抽屉、面板、整页外边距 */
+  --page-pad: var(--sp-6); /* 内容页外框（两条竖线）内的左右留白，≤640 为 --sp-4 */
+
+  /* 尺寸 */
+  --row-h: 44px; /* 列表行 */
+  --row-h-sm: 40px; /* 表格行 */
+  --th-h: 36px; /* 表头 */
+  --menu-item-h: 32px;
+  --chip-h: 22px;
+  --badge-h: 18px;
+  --kbd-h: 20px;
+  --control-h-sm: 32px;
+  --control-h: 36px;
+  --control-h-lg: 44px;
+  --search-h: 48px;
+  --nav-h: 56px;
+  --bar-h: 48px; /* ≤640 的顶栏与搜索框高度 */
+  --content-max: 1440px;
+  /* 断点（媒体查询无法读取变量，此处仅作记录）：≤640 手机 · 641–1024 平板 · ≥1025 桌面 */
+  --bp-sm: 640px;
+  --bp-md: 1024px;
+  --gutter: clamp(20px, 4vw, 48px);
+
+  /* 层级 */
+  --z-raised: 1; /* 固定列 */
+  --z-sticky: 20; /* 吸顶工具栏、吸底托盘 */
+  --z-nav: 30; /* 顶栏 */
+  --z-menu: 50; /* 菜单、弹层（在各自层叠上下文内） */
+  --z-overlay: 100; /* 跳转链接、对话框 */
+  --backdrop: blur(12px) saturate(1.6);
+
+  /* 动效：进入与退出用 --ease-out，屏内移动用 --ease-in-out；不用 ease-in */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --dur-1: 120ms; /* hover、颜色、退出 */
+  --dur-2: 180ms; /* 菜单、弹层进入 */
+  --dur-3: 260ms; /* 视图切换、抽屉 */
+  --dur-press: 160ms;
+  --scale-press: 0.97;
+}
+
+/* 触屏：控件长高到 ≥40px 的点击区 */
+@media (pointer: coarse) {
+  :root {
+    --control-h-sm: 36px;
+    --control-h: 40px;
+    --control-h-lg: 48px;
+    --menu-item-h: 40px;
+  }
+}
+
+/* 手机：顶栏降到 48px，吸顶偏移与锚点偏移随之变化 */
+@media (max-width: 640px) {
+  :root {
+    --nav-h: var(--bar-h);
+    --page-pad: var(--sp-4);
+  }
+}
+
+:root[data-scheme="light"] {
+  color-scheme: light;
+  /* 浅色：中性灰面，字与线不带色偏 */
+  --surface-0: #f0f0f0; /* 页面 */
+  --surface-1: #e8e8e8; /* 下沉：代码块、吸顶列 */
+  --surface-2: #f7f7f7; /* 卡片 */
+  --surface-3: #fafafa; /* 菜单、弹层 */
+  --surface-4: #e2e2e2; /* 悬浮、分段控件当前项 */
+  --bg-input: #fafafa;
+  --bg-translucent: rgba(240, 240, 240, 0.8);
+  --ink: #1a1a1a;
+  --ink-2: #444444;
+  --ink-3: #626262;
+  --ink-4: #9a9a9a;
+  --line-soft: rgba(0, 0, 0, 0.07);
+  --line: rgba(0, 0, 0, 0.11);
+  --line-strong: rgba(0, 0, 0, 0.17);
+  --accent-ui: #b35a35;
+  --accent-text: #9e4d2b;
+  --accent-deep: #9c4c2b;
+  --accent-tint: rgba(179, 90, 53, 0.12);
+  --accent-soft: rgba(179, 90, 53, 0.28);
+  --accent-glow: rgba(179, 90, 53, 0.07);
+  --hover-row: rgba(0, 0, 0, 0.04);
+  --hover-row-solid: #e6e6e6;
+  --hover-strong: rgba(0, 0, 0, 0.065);
+  --pressed: rgba(0, 0, 0, 0.1);
+  --selection: rgba(179, 90, 53, 0.25);
+  --scrollbar: rgba(0, 0, 0, 0.2);
+  --shadow-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.7);
+  --shadow-ring: 0 0 0 1px rgba(0, 0, 0, 0.07);
+  --shadow-1: 0 1px 2px -1px rgba(0, 0, 0, 0.06), 0 2px 4px 0 rgba(0, 0, 0, 0.04);
+  --shadow-2: 0 2px 6px -1px rgba(0, 0, 0, 0.08), 0 10px 28px -6px rgba(0, 0, 0, 0.14);
+  --shadow-3: 0 6px 16px -4px rgba(0, 0, 0, 0.1), 0 24px 64px -12px rgba(0, 0, 0, 0.2);
+  --shadow-kbd: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  --shadow-focus: 0 0 0 3px rgba(179, 90, 53, 0.28);
+}
