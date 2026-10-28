@@ -22,3 +22,12 @@
 - 来源：https://github.com/vercel-labs/agent-skills，仅同步 `skills/web-design-guidelines`
 - 许可证：MIT。上游仓库没有单独的 LICENSE 文件，许可证声明见其 README 的 License 小节，同步保存在 `vendor/vercel-agent-skills/README.md`
 - 用途：按 Vercel Web Interface Guidelines 评审 UI 代码，安装为用户级 skill。该 skill 运行时会从 https://github.com/vercel-labs/web-interface-guidelines （MIT）拉取最新规则，规则本身不入库。
+
+## 参考整理（未同步进 vendor/）
+
+### enesozturk/dimensional-drawing
+
+- 作者：Enes Ozturk，Copyright (c) 2026 Enes Ozturk
+- 来源：https://github.com/enesozturk/dimensional-drawing
+- 许可证：MIT，全文见上游仓库 LICENSE。本仓库未复制其源码、示例或媒体文件。
+- 用途：`docs/dimensional-drawing.md` 整理组件尺寸图的可复用约定。需要原技能出图时从上游安装，不经过 `scripts/sync-upstream.py`。
