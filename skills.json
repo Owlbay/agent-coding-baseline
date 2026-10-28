@@ -61,6 +61,38 @@
         "web-design-guidelines"
       ],
       "scope": "user"
+    },
+    {
+      "id": "emilkowalski-skills",
+      "repository": "https://github.com/emilkowalski/skills",
+      "author": "Emil Kowalski",
+      "license": "MIT",
+      "licenseFile": "LICENSE",
+      "$syncNote": "只同步动效相关 skill。write-swift、pick-ui-library、prototype、mobile-native、break-ui、ask-sonner 与动效无关，不收录。",
+      "paths": {
+        "skills/animate": "skills/animate",
+        "skills/review-animations": "skills/review-animations",
+        "skills/improve-animations": "skills/improve-animations",
+        "skills/find-animation-opportunities": "skills/find-animation-opportunities",
+        "skills/animation-performance": "skills/animation-performance",
+        "skills/animation-vocabulary": "skills/animation-vocabulary",
+        "skills/animate-expo": "skills/animate-expo",
+        "skills/apple-design": "skills/apple-design",
+        "skills/emil-design-eng": "skills/emil-design-eng",
+        "LICENSE": "LICENSE"
+      },
+      "skills": [
+        "animate",
+        "review-animations",
+        "improve-animations",
+        "find-animation-opportunities",
+        "animation-performance",
+        "animation-vocabulary",
+        "animate-expo",
+        "apple-design",
+        "emil-design-eng"
+      ],
+      "scope": "user"
     }
   ],
   "own": [

@@ -23,6 +23,14 @@
 - 许可证：MIT。上游仓库没有单独的 LICENSE 文件，许可证声明见其 README 的 License 小节，同步保存在 `vendor/vercel-agent-skills/README.md`
 - 用途：按 Vercel Web Interface Guidelines 评审 UI 代码，安装为用户级 skill。该 skill 运行时会从 https://github.com/vercel-labs/web-interface-guidelines （MIT）拉取最新规则，规则本身不入库。
 
+## emilkowalski/skills → `vendor/emilkowalski-skills/`
+
+- 作者：Emil Kowalski，Copyright (c) 2026 Emil Kowalski
+- 来源：https://github.com/emilkowalski/skills，只同步动效相关 skill：`animate`、`review-animations`、`improve-animations`、`find-animation-opportunities`、`animation-performance`、`animation-vocabulary`、`animate-expo`、`apple-design`、`emil-design-eng`
+- 许可证：MIT，全文见 `vendor/emilkowalski-skills/LICENSE`
+- 用途：动效的构建、评审、审计、性能与用语指引，安装为用户级 skill。
+- 未同步：`write-swift`、`pick-ui-library`、`prototype`、`mobile-native`、`break-ui`、`ask-sonner`。这些与动效无关，不进入 `vendor/`。
+
 ## 参考整理（未同步进 vendor/）
 
 ### enesozturk/dimensional-drawing

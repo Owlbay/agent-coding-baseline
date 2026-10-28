@@ -4,7 +4,7 @@
 用法:
   scripts/install-skills.py project <项目目录>   安装 scope=project 的上游（impeccable）：
       skills/agents 拷到 <项目>/.claude/，上游 hooks 改写为项目路径后合并进 .claude/settings.json
-  scripts/install-skills.py user [--dry-run]       安装 scope=user 的上游（jakubkrehel/skills）到 ~/.claude/skills
+  scripts/install-skills.py user [--dry-run]       安装 scope=user 的上游到 ~/.claude/skills
 """
 import json
 import shutil
