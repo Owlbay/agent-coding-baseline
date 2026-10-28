@@ -14,6 +14,7 @@ Agent 编程（Claude Code / Codex）的个人基准仓库：统一个人偏好�
 | better-* 等 11 个 skill | [jakubkrehel/skills](https://github.com/jakubkrehel/skills)（MIT） | 用户级 `~/.claude/skills/` |
 | web-design-guidelines | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)（MIT） | 用户级 `~/.claude/skills/` |
 | impeccable skill + agents + hook | [pbakaus/impeccable](https://github.com/pbakaus/impeccable)（Apache 2.0） | 项目级 `<项目>/.claude/` |
+| 组件尺寸图约定（摘要，不含上游源码） | [enesozturk/dimensional-drawing](https://github.com/enesozturk/dimensional-drawing)（MIT） | 不安装；见 [`docs/references/design/dimensional-drawing.md`](docs/references/design/dimensional-drawing.md) |
 
 ## 结构
 
@@ -21,6 +22,11 @@ Agent 编程（Claude Code / Codex）的个人基准仓库：统一个人偏好�
 agent-coding-baseline/
 ├── user/                    # 个人级配置（自己维护）
 ├── project/                 # 新项目模板：AGENTS.md、CLAUDE.md、.claude/、docs/、编辑器与 git 配置
+├── docs/                    # 基准仓库文档，不进项目模板
+│   ├── README.md            # 子目录索引：各目录放什么、新资料登记在哪
+│   └── references/          # 外部资料的约定摘要，按主题分目录
+│       └── design/          # 界面与图纸
+│           └── dimensional-drawing.md
 ├── vendor/                  # 上游 skill 原样同步，不手改
 ├── skills.json              # 上游清单：仓库、许可证、同步路径、安装范围
 ├── skills.lock.json         # 当前同步到的上游提交
@@ -65,5 +71,6 @@ scripts/sync-upstream.py --check
 
 - 个人语言、工作偏好、模型参数只放 `user/`；`project/` 只放能随项目共享的约定。
 - `vendor/` 只由同步脚本写入；新增上游时同时更新 `skills.json` 和 `THIRD_PARTY_NOTICES.md`。
+- `docs/` 是基准仓库自己的文档，不进项目模板。外部资料的约定摘要放 `docs/references/<主题>/`，一篇来源一份文件，写清来源和许可证，不复制上游源码；新增时登记到 `docs/README.md` 和 `THIRD_PARTY_NOTICES.md`。要安装的 skill 仍走 `vendor/`。
 - 项目里的 `.claude/skills/`、`.claude/agents/` 不入库（模板 `.gitignore` 已忽略），需要时从本仓库重装。
 - 提交前跑 `scripts/check.sh`。
