@@ -30,4 +30,4 @@
 - 作者：Enes Ozturk，Copyright (c) 2026 Enes Ozturk
 - 来源：https://github.com/enesozturk/dimensional-drawing
 - 许可证：MIT，全文见上游仓库 LICENSE。本仓库未复制其源码、示例或媒体文件。
-- 用途：`docs/dimensional-drawing.md` 整理组件尺寸图的可复用约定。需要原技能出图时从上游安装，不经过 `scripts/sync-upstream.py`。
+- 用途：`docs/references/design/dimensional-drawing.md` 整理组件尺寸图的可复用约定。需要原技能出图时从上游安装，不经过 `scripts/sync-upstream.py`。

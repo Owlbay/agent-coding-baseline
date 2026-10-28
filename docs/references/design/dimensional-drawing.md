@@ -9,11 +9,11 @@
 图纸约定对做界面的 agent 有用，和本仓库已有的间距层级、视觉体系接得上。收录方式按仓库现有边界：
 
 - `vendor/` 由同步脚本原样写入，给的是可以直接安装的 skill。这份材料要连同示例 HTML、动效场景、渲染器和媒体文件才完整，同步进来等于收下一套绘图程序。约定用这篇摘要就够。
-- `project/docs/design/` 是新产品要遵守的界面风格，会被 `new-project.sh` 拷进每个项目。尺寸图是按需产出的说明文件，留在基准仓库的 `docs/`。
+- `project/docs/design/` 是新产品要遵守的界面风格，会被 `new-project.sh` 拷进每个项目。尺寸图是按需产出的说明文件，放在 `docs/references/design/`。同一类外部资料继续放这个目录，别的主题另开 `docs/references/<主题>/`。
 
 ## 和现有规范的关系
 
-产品界面仍按 [视觉体系](../project/docs/design/visual.md) 选定的 Quiet 或 Terminal，间距仍按 [间距层级](../project/docs/design/spacing.md)。图上的 `S#`、`R#` 只是代号：数值来自组件源码、计算样式，或上述 token。能对应上就同时写 token 名和实测值；源里没有的写 `[TBD]`。
+产品界面仍按 [视觉体系](../../../project/docs/design/visual.md) 选定的 Quiet 或 Terminal，间距仍按 [间距层级](../../../project/docs/design/spacing.md)。图上的 `S#`、`R#` 只是代号：数值来自组件源码、计算样式，或上述 token。能对应上就同时写 token 名和实测值；源里没有的写 `[TBD]`。
 
 Quiet 的嵌套圆角是外 = 内 + 内距。尺寸图把边框也算进去：内圆角 = 外圆角 − 边框 − 内距。边框为 0 时两条相同。公式写在图上，并给出算完的数。
 
