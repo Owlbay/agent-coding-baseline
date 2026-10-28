@@ -13,6 +13,7 @@ Agent 编程（Claude Code / Codex）的个人基准仓库：统一个人偏好�
 | commit 规范（`/commit`） | `user/claude/commands/commit.md` | `~/.claude/commands/` |
 | better-* 等 11 个 skill | [jakubkrehel/skills](https://github.com/jakubkrehel/skills)（MIT） | 用户级 `~/.claude/skills/` |
 | web-design-guidelines | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)（MIT） | 用户级 `~/.claude/skills/` |
+| animate 等 9 个动效 skill | [emilkowalski/skills](https://github.com/emilkowalski/skills)（MIT） | 用户级 `~/.claude/skills/` |
 | impeccable skill + agents + hook | [pbakaus/impeccable](https://github.com/pbakaus/impeccable)（Apache 2.0） | 项目级 `<项目>/.claude/` |
 | 组件尺寸图约定（摘要，不含上游源码） | [enesozturk/dimensional-drawing](https://github.com/enesozturk/dimensional-drawing)（MIT） | 不安装；见 [`docs/references/design/dimensional-drawing.md`](docs/references/design/dimensional-drawing.md) |
 
