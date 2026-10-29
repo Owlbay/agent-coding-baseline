@@ -1,5 +1,5 @@
 {
-  "$comment": "上游来源清单。scripts/sync-upstream.py 把 paths 同步到 vendor/<category>/<id>/，提交记录写入 skills.lock.json。每个 skill 只属于一个 category。安装时不保留分类层。",
+  "$comment": "上游来源清单。scripts/sync-upstream.py 把 paths 同步到 vendor/<category>/<id>/，提交记录写入 skills.lock.json。每个 skill 只属于一个 category。excluded 是明确不收录的路径。references 是只做约定摘要、不进 vendor/ 的资料。docs/UPSTREAMS.md 由 scripts/render-upstreams.py 从本文件和 skills.lock.json 生成。",
   "categories": [
     {
       "id": "interface-design",
@@ -77,7 +77,21 @@
         {"name": "variant", "category": "prototyping"}
       ],
       "scope": "user",
-      "licenseFile": "LICENSE"
+      "licenseFile": "LICENSE",
+      "excluded": [
+        {
+          "path": "skills/build-design",
+          "reason": "从 Figma 或设计图还原界面。不在安装清单里，不同步。"
+        },
+        {
+          "path": "skills/state-machine",
+          "reason": "把组件的每个状态铺在临时页上。不在安装清单里，不同步。"
+        },
+        {
+          "path": "skills/teardown",
+          "reason": "为实物或界面层次做技术插图。不在安装清单里，不同步。"
+        }
+      ]
     },
     {
       "id": "impeccable",
@@ -156,7 +170,23 @@
         {"name": "ask-sonner", "category": "frontend-libraries"},
         {"name": "write-swift", "category": "language"}
       ],
-      "scope": "user"
+      "scope": "user",
+      "excluded": [
+        {
+          "path": "performance-cheatsheet.md",
+          "reason": "不是 skill。其中的动效性能要点已由 animation-performance 覆盖。"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "dimensional-drawing",
+      "repository": "https://github.com/enesozturk/dimensional-drawing",
+      "author": "Enes Ozturk",
+      "license": "MIT",
+      "doc": "docs/references/interface-design/dimensional-drawing.md",
+      "summary": "组件尺寸图的可复用约定。不复制上游源码，不经 scripts/sync-upstream.py 安装，也不锁定提交。"
     }
   ],
   "own": [

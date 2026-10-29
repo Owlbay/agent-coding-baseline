@@ -14,6 +14,7 @@
 
 | 文档 | 内容 |
 | --- | --- |
+| [UPSTREAMS.md](UPSTREAMS.md) | 上游仓库、作者、许可证、收录 skill 与分类、安装范围、锁定提交、未收录项。由 `scripts/render-upstreams.py` 生成 |
 | [references/interface-design/dimensional-drawing.md](references/interface-design/dimensional-drawing.md) | 组件尺寸图：只画结构、代号与公式、不发明数值 |
 
-新增一份资料时：放到对应分类目录（没有目录就按上表的 id 新建），在上表登记，并在根目录 `THIRD_PARTY_NOTICES.md` 记下许可证。
+新增一份资料时：放到对应分类目录（没有目录就按上表的 id 新建），在上表登记，在根目录 `THIRD_PARTY_NOTICES.md` 记下许可证，并在 `skills.json` 的 `references` 里补一条后重新生成 [UPSTREAMS.md](UPSTREAMS.md)。

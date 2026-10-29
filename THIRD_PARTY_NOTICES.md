@@ -1,6 +1,6 @@
 # Third-party notices
 
-`vendor/` 下的内容由 `scripts/sync-upstream.py` 从上游原样同步，未做修改。目录是 `vendor/<category>/<upstream-id>/`：每个 skill 只属于一个功能分类，许可证文件放在该上游出现过的每一个分类目录里。作者写在 `skills.json`，对应提交记录在 `skills.lock.json`。各目录继续受其许可证约束。
+收录范围、未收录条目和锁定提交见 [`docs/UPSTREAMS.md`](docs/UPSTREAMS.md)。`vendor/` 下的内容由 `scripts/sync-upstream.py` 从上游原样同步，未做修改。目录是 `vendor/<category>/<upstream-id>/`：每个 skill 只属于一个功能分类，许可证文件放在该上游出现过的每一个分类目录里。作者写在 `skills.json`，对应提交记录在 `skills.lock.json`。各目录继续受其许可证约束。
 
 ## jakubkrehel/skills
 

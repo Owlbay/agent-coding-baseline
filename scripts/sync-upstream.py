@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """按 skills.json 拉取上游默认分支，把文件同步到 vendor/<category>/<id>/，并更新 skills.lock.json。
 
-用法: scripts/sync-upstream.py [--check]
-  --check  只报告上游是否有新提交，不改文件；有更新时退出码为 1。
+用法: scripts/sync-upstream.py [--check] [--report FILE]
+  --check   只报告上游是否有新提交，不改文件；有更新时退出码为 1。
+  --report  把本次克隆里、尚未收录且不在 excluded 中的 skill 写成 JSON。
 """
 import json
 import re
@@ -118,6 +119,40 @@ def place(up, src: Path):
                 sys.exit(f"{uid}: 上游已没有 skill {skill['name']}，请更新 skills.json")
 
 
+def skill_roots(up):
+    roots = set()
+    for skill in skills_of(up):
+        source = Path(up["paths"][f"skills/{skill['name']}"]).as_posix().strip("/")
+        parent = Path(source).parent.as_posix()
+        roots.add("" if parent == "." else parent)
+    return roots
+
+
+def unlisted_skills(src: Path, up) -> list[dict]:
+    """已同步 skill 所在目录里，带 SKILL.md、但没有写入 paths、也不在 excluded 里的子目录。
+
+    不扫描仓库其余位置。上游常把同一份 skill 复制到 .claude、.cursor 等目录，那些不是新 skill。
+    """
+    known = set()
+    for skill in skills_of(up):
+        known.add(Path(up["paths"][f"skills/{skill['name']}"]).as_posix().strip("/"))
+    excluded = {Path(item["path"]).as_posix().strip("/") for item in up.get("excluded", [])}
+    found = []
+    for root in skill_roots(up):
+        base = src / root if root else src
+        if not base.is_dir():
+            continue
+        for child in sorted(base.iterdir()):
+            if not child.is_dir() or not (child / "SKILL.md").is_file():
+                continue
+            rel = child.relative_to(src).as_posix()
+            if rel in known or rel in excluded:
+                continue
+            found.append({"name": child.name, "path": rel})
+    found.sort(key=lambda item: item["path"])
+    return found
+
+
 def validate(manifest):
     known = []
     for cat in manifest.get("categories", []):
@@ -148,15 +183,44 @@ def validate(manifest):
         for key in up.get("paths", {}):
             if key.startswith("skills/") and key[len("skills/"):] not in names:
                 sys.exit(f"{up['id']}: paths 有未列入 skills 的 {key}")
+        path_values = set(up.get("paths", {}).values())
+        for item in up.get("excluded", []):
+            if not isinstance(item, dict) or not item.get("path") or not item.get("reason"):
+                sys.exit(f"{up['id']}: excluded 项需要 path 和 reason")
+            path = item["path"].strip("/")
+            if path in up.get("paths", {}) or path in path_values:
+                sys.exit(f"{up['id']}: excluded {path} 已在 paths 里")
+            if Path(path).name in names:
+                sys.exit(f"{up['id']}: excluded {path} 与已收录 skill 重复")
+
+
+def parse_args(argv):
+    check_only = False
+    report = None
+    i = 0
+    while i < len(argv):
+        arg = argv[i]
+        if arg == "--check":
+            check_only = True
+        elif arg == "--report":
+            i += 1
+            if i >= len(argv):
+                sys.exit("用法: scripts/sync-upstream.py [--check] [--report FILE]")
+            report = Path(argv[i])
+        else:
+            sys.exit(f"未知参数: {arg}")
+        i += 1
+    return check_only, report
 
 
 def main():
-    check_only = "--check" in sys.argv[1:]
+    check_only, report = parse_args(sys.argv[1:])
     manifest = json.loads(MANIFEST.read_text())
     validate(manifest)
     lock = json.loads(LOCK.read_text()) if LOCK.exists() else {"upstreams": {}}
     changed = []
     rewritten = False
+    discovered = {}
 
     with tempfile.TemporaryDirectory() as tmp:
         for up in manifest["upstreams"]:
@@ -179,6 +243,8 @@ def main():
             got = git("rev-parse", "HEAD", cwd=src)
             if got != head:
                 sys.exit(f"{uid}: 浅克隆得到 {got[:7]}，与 ls-remote 的 {head[:7]} 不一致")
+            if report is not None:
+                discovered[uid] = unlisted_skills(src, up)
             place(up, src)
             lock["upstreams"][uid] = {
                 "repository": repo,
@@ -190,6 +256,9 @@ def main():
 
     if rewritten:
         LOCK.write_text(json.dumps(lock, indent=2, ensure_ascii=False) + "\n")
+    if report is not None:
+        report.parent.mkdir(parents=True, exist_ok=True)
+        report.write_text(json.dumps(discovered, indent=2, ensure_ascii=False) + "\n")
     if changed:
         print("有更新: " + ", ".join(changed))
     elif rewritten:

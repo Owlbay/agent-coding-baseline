@@ -1,0 +1,62 @@
+name: Upstream update
+
+# 每周一 01:00 UTC 拉取 skills.json 里各上游的最新提交。
+# 有变化时跑检查，并开或更新同一个 PR。没有变化则不开 PR，也不合并。
+# 新 skill 只写在 PR 正文里，不自动写进 skills.json。
+#
+# 使用仓库自带的 GITHUB_TOKEN，不另配 PAT。
+# 若推送或开 PR 失败，到 Settings → Actions → General 确认：
+# - Workflow permissions 为 Read and write permissions
+# - 已勾选 Allow GitHub Actions to create and approve pull requests
+on:
+  schedule:
+    - cron: "0 1 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: upstream-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout default branch
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Remember current lock
+        run: cp skills.lock.json /tmp/skills.lock.before.json
+
+      - name: Sync vendor and scan for new skills
+        run: python3 scripts/sync-upstream.py --report /tmp/new-skills.json
+
+      - name: Refresh upstream inventory
+        run: python3 scripts/render-upstreams.py
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "没有变化，不开 PR"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          scripts/check.sh
+          python3 scripts/sync-upstream.py --check
+
+      - name: Open or update pull request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/upstream-pr.py --before /tmp/skills.lock.before.json --report /tmp/new-skills.json --push
