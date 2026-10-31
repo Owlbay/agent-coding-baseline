@@ -13,7 +13,7 @@ Agent 编程（Claude Code / Codex）的个人基准仓库：统一个人偏好�
 | commit 规范（`/commit`） | `user/claude/commands/commit.md` | `~/.claude/commands/` |
 | 组件尺寸图约定（摘要，不含上游源码） | [enesozturk/dimensional-drawing](https://github.com/enesozturk/dimensional-drawing)（MIT） | 不安装；见 [`docs/references/interface-design/dimensional-drawing.md`](docs/references/interface-design/dimensional-drawing.md) |
 
-第三方 skill 按功能放在 `vendor/<category>/<upstream-id>/`。每个 skill 只进一个分类。作者在 `skills.json`，锁定的提交在 `skills.lock.json`，许可证文件跟在对应的上游目录里。
+第三方 skill 按功能放在 `vendor/<category>/<upstream-id>/`。每个 skill 只进一个分类。作者、许可证、未收录路径在 `skills.json`，锁定的提交在 `skills.lock.json`，可读的汇总在 [`docs/UPSTREAMS.md`](docs/UPSTREAMS.md)。许可证文件跟在对应的上游目录里。
 
 安装时去掉分类层：用户级 skill 装到 `~/.claude/skills/<name>/`，项目级 skill 装到目标项目的 `.claude/`。
 
@@ -101,6 +101,7 @@ agent-coding-baseline/
 ├── project/                 # 新项目模板：AGENTS.md、CLAUDE.md、.claude/、docs/、编辑器与 git 配置
 ├── docs/                    # 基准仓库文档，不进项目模板
 │   ├── README.md            # 子目录索引：各目录放什么、新资料登记在哪
+│   ├── UPSTREAMS.md         # 上游清单，由 render-upstreams.py 生成
 │   └── references/          # 外部资料的约定摘要，主题 id 与 vendor 分类一致
 │       └── interface-design/
 │           └── dimensional-drawing.md
@@ -129,10 +130,12 @@ agent-coding-baseline/
 ├── skills.json              # 上游清单：仓库、许可证、分类、同步路径、安装范围
 ├── skills.lock.json         # 当前同步到的上游提交
 ├── .github/workflows/
-│   ├── sync-upstream.yml    # 每周一 01:00 UTC 拉上游，有变化直接提交到本仓库；可手动触发
+│   ├── upstream-update.yml  # 每周一 01:00 UTC 拉上游；有变化则开 PR，不合并
 │   └── check.yml            # push / PR 时跑 scripts/check.sh
 └── scripts/
-    ├── sync-upstream.py     # 同步 vendor/；--check 只看有无更新
+    ├── sync-upstream.py     # 同步 vendor/；--check 只看有无更新；--report 列出新 skill
+    ├── render-upstreams.py  # 用 skills.json 和 skills.lock.json 生成 docs/UPSTREAMS.md
+    ├── upstream-pr.py       # 有变化时开或更新同一个上游 PR
     ├── install-skills.py    # user：装到 ~/.claude/skills/<name>；project <目录>：装 skill/agents 并合并 hooks
     ├── new-project.sh       # 拷模板到目标目录（不覆盖已有文件）；--skills 顺带装项目级 skill
     ├── sync-user.sh         # user/ ↔ 本机：默认看差异，--apply 写入（自动 .bak），--pull 拉回
@@ -170,7 +173,8 @@ scripts/sync-upstream.py --check
 ## 约定
 
 - 个人语言、工作偏好、模型参数只放 `user/`；`project/` 只放能随项目共享的约定。`project/docs/design/` 是新项目模板里的界面风格，路径保持 `docs/design/`，不跟着 skill 分类改名。
-- `vendor/` 只由同步脚本写入。每个 skill 在 `skills.json` 里有一个 `category`，同步到 `vendor/<category>/<upstream-id>/skills/<name>/`。新增上游时同时更新 `skills.json` 和 `THIRD_PARTY_NOTICES.md`。
+- `vendor/` 只由同步脚本写入。每个 skill 在 `skills.json` 里有一个 `category`，同步到 `vendor/<category>/<upstream-id>/skills/<name>/`。新增上游时同时更新 `skills.json`、`docs/UPSTREAMS.md`（跑 `scripts/render-upstreams.py`）和 `THIRD_PARTY_NOTICES.md`。明确不收录的路径写在该上游的 `excluded`。
+- 每周一 01:00 UTC，`.github/workflows/upstream-update.yml` 拉取上游。有变化就开或更新 `upstream-sync` 上的同一个 PR，不自动合并。新 skill 只在 PR 里提示。
 - 用户级 skill 安装到 `~/.claude/skills/<name>/`，项目级 skill 安装到目标项目的 `.claude/`。安装路径不带分类名。
 - `docs/` 是基准仓库自己的文档，不进项目模板。外部资料的约定摘要放 `docs/references/<category>/`，分类 id 与 `vendor/` 相同，一篇来源一份文件，写清来源和许可证，不复制上游源码；新增时登记到 `docs/README.md` 和 `THIRD_PARTY_NOTICES.md`。要安装的 skill 仍走 `vendor/`。
 - 项目里的 `.claude/skills/`、`.claude/agents/` 不入库（模板 `.gitignore` 已忽略），需要时从本仓库重装。

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # 基准仓库自检：脚本语法、JSON 合法性、vendor/ 与清单一致；本机运行时额外报告 user/ 配置漂移。
 set -euo pipefail
+export PYTHONDONTWRITEBYTECODE=1
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 status=0
@@ -86,6 +87,24 @@ for up in manifest["upstreams"]:
                 bad.append(f"{uid}: vendor/{cat}/{uid} 缺少 {key}")
     if (Path("vendor") / uid).exists():
         bad.append(f"{uid}: 仍留在 vendor/{uid}/，应放到分类目录下")
+    path_values = set(up.get("paths", {}).values())
+    for item in up.get("excluded", []):
+        if not isinstance(item, dict) or not item.get("path") or not item.get("reason"):
+            bad.append(f"{uid}: excluded 项需要 path 和 reason")
+            continue
+        path = item["path"].strip("/")
+        if path in up.get("paths", {}) or path in path_values:
+            bad.append(f"{uid}: excluded {path} 已在 paths 里")
+        if Path(path).name in names:
+            bad.append(f"{uid}: excluded {path} 与已收录 skill 重复")
+
+for ref in manifest.get("references", []):
+    for key in ("name", "repository", "author", "license", "doc", "summary"):
+        if not ref.get(key):
+            bad.append(f"references.{ref.get('name', '?')} 缺少 {key}")
+    doc = ref.get("doc")
+    if doc and not Path(doc).is_file():
+        bad.append(f"references 文档不存在: {doc}")
 
 vendor = Path("vendor")
 if vendor.is_dir():
@@ -101,6 +120,9 @@ for b in bad:
     print(b)
 sys.exit(1 if bad else 0)
 PY
+
+python3 scripts/render-upstreams.py --check || status=1
+python3 scripts/upstream-pr.py --self-test || status=1
 
 if [ -z "${CI:-}" ] && [ -d "$HOME/.claude" ]; then
   drift=$(scripts/sync-user.sh)
