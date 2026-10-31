@@ -43,6 +43,7 @@ Agent 编程（Claude Code / Codex）的个人基准仓库：统一个人偏好�
 | animation-performance | [emilkowalski/skills](https://github.com/emilkowalski/skills) | 把掉帧的动效收进帧预算 | 用户级 |
 | animation-vocabulary | [emilkowalski/skills](https://github.com/emilkowalski/skills) | 把口头描述的动效换成准确说法 | 用户级 |
 | find-animation-opportunities | [emilkowalski/skills](https://github.com/emilkowalski/skills) | 找出该加动效的地方，并否掉不该加的 | 用户级 |
+| remove-animations | [emilkowalski/skills](https://github.com/emilkowalski/skills) | 找出不该留下的动效并删掉，只做减法 | 用户级 |
 | improve-animations | [emilkowalski/skills](https://github.com/emilkowalski/skills) | 审计整个代码库的动效，给出可执行的修改计划 | 用户级 |
 | review-animations | [emilkowalski/skills](https://github.com/emilkowalski/skills) | 按严格标准评审已有动效 | 用户级 |
 | apple-design | [emilkowalski/skills](https://github.com/emilkowalski/skills) | 把 Apple 的手势、弹簧和可打断动效原则用到 web | 用户级 |
@@ -111,7 +112,7 @@ agent-coding-baseline/
 │   │   ├── impeccable/             # impeccable，以及 agents、hooks、LICENSE、NOTICE
 │   │   └── jakubkrehel-skills/     # better-colors、better-layout、better-typography、better-ui、better-writing、explain-interface
 │   ├── motion/
-│   │   └── emilkowalski-skills/    # animate、animate-expo、animation-performance、animation-vocabulary、apple-design、find-animation-opportunities、improve-animations、review-animations
+│   │   └── emilkowalski-skills/    # animate、animate-expo、animation-performance、animation-vocabulary、apple-design、find-animation-opportunities、improve-animations、remove-animations、review-animations
 │   ├── mobile/
 │   │   └── emilkowalski-skills/    # mobile-native
 │   ├── accessibility/

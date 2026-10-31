@@ -48,9 +48,9 @@
 - 作者：Paul Bakaus
 - 许可证：Apache-2.0（文件 `LICENSE`）
 - 安装范围：项目级，安装到目标项目的 `.claude/`
-- 锁定提交：[`5e745ac`](https://github.com/pbakaus/impeccable/commit/5e745ace7e151feb2a93d360d0281fe39448b857)（`5e745ace7e151feb2a93d360d0281fe39448b857`）
-- 上游提交时间：2026-10-28T16:28:51-07:00
-- 同步时间：2026-10-29T02:23:35+00:00
+- 锁定提交：[`df3a4ab`](https://github.com/pbakaus/impeccable/commit/df3a4abe7d0840d5f60324812c432e00b66a4e75)（`df3a4abe7d0840d5f60324812c432e00b66a4e75`）
+- 上游提交时间：2026-10-30T10:16:26+00:00
+- 同步时间：2026-10-31T04:41:04+00:00
 
 | Skill | 分类 |
 | --- | --- |
@@ -89,7 +89,7 @@
 - 安装范围：用户级，安装到 `~/.claude/skills/<name>/`
 - 锁定提交：[`a81dbca`](https://github.com/emilkowalski/skills/commit/a81dbca07f2217b7103e510c0f13f8d5b017afc9)（`a81dbca07f2217b7103e510c0f13f8d5b017afc9`）
 - 上游提交时间：2026-10-28T19:25:28+01:00
-- 同步时间：2026-10-29T02:23:36+00:00
+- 同步时间：2026-10-31T04:41:04+00:00
 
 | Skill | 分类 |
 | --- | --- |
@@ -99,6 +99,7 @@
 | `animation-performance` | 动效（`motion`） |
 | `animation-vocabulary` | 动效（`motion`） |
 | `find-animation-opportunities` | 动效（`motion`） |
+| `remove-animations` | 动效（`motion`） |
 | `improve-animations` | 动效（`motion`） |
 | `review-animations` | 动效（`motion`） |
 | `apple-design` | 动效（`motion`） |

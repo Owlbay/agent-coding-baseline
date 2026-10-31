@@ -36,7 +36,7 @@
 - 许可证：MIT。全文随分类目录各留一份，例如 `vendor/motion/emilkowalski-skills/LICENSE`
 - 用途：安装为用户级 skill。
   - 界面设计：`emil-design-eng`
-  - 动效：`animate`、`animate-expo`、`animation-performance`、`animation-vocabulary`、`find-animation-opportunities`、`improve-animations`、`review-animations`、`apple-design`
+  - 动效：`animate`、`animate-expo`、`animation-performance`、`animation-vocabulary`、`find-animation-opportunities`、`remove-animations`、`improve-animations`、`review-animations`、`apple-design`
   - 移动端：`mobile-native`
   - 评审与压测：`break-ui`
   - 原型与变体：`prototype`

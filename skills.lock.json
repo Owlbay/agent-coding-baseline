@@ -8,9 +8,9 @@
     },
     "impeccable": {
       "repository": "https://github.com/pbakaus/impeccable",
-      "commit": "5e745ace7e151feb2a93d360d0281fe39448b857",
-      "committedAt": "2026-10-28T16:28:51-07:00",
-      "syncedAt": "2026-10-29T02:23:35+00:00"
+      "commit": "df3a4abe7d0840d5f60324812c432e00b66a4e75",
+      "committedAt": "2026-10-30T10:16:26+00:00",
+      "syncedAt": "2026-10-31T04:41:04+00:00"
     },
     "vercel-agent-skills": {
       "repository": "https://github.com/vercel-labs/agent-skills",
@@ -22,7 +22,7 @@
       "repository": "https://github.com/emilkowalski/skills",
       "commit": "a81dbca07f2217b7103e510c0f13f8d5b017afc9",
       "committedAt": "2026-10-28T19:25:28+01:00",
-      "syncedAt": "2026-10-29T02:23:36+00:00"
+      "syncedAt": "2026-10-31T04:41:04+00:00"
     }
   }
 }
