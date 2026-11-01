@@ -31,6 +31,9 @@ Agent 编程（Claude Code / Codex）的个人基准仓库：统一个人偏好�
 | explain-interface | [jakubkrehel/skills](https://github.com/jakubkrehel/skills) | 根据网址或截图说明界面、视觉效果或动效是怎么做出来的 | 用户级 |
 | emil-design-eng | [emilkowalski/skills](https://github.com/emilkowalski/skills) | Emil 的界面打磨、组件取舍和动效判断 | 用户级 |
 | impeccable | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 设计、改版、打磨或评审前端界面，并带上 agents 与 hook | 项目级 |
+| unslop | [heydamir/unslop](https://github.com/heydamir/unslop)，Damir Sokolovsky（[@heydamir](https://x.com/heydamir)） | 把看起来像模型生成的界面改成有产品自己性格的设计 | 用户级 |
+
+`unslop` 以 CC BY 4.0 发布，使用或改编时保留对 Damir Sokolovsky（@heydamir）的署名，并链接回 [heydamir/unslop](https://github.com/heydamir/unslop)。现场网页快照需要 Playwright 和 Chromium，故事视频还需要 ffmpeg。这两项都是可选的，没装时其余改版步骤不受影响。
 
 ### 动效
 
@@ -109,6 +112,7 @@ agent-coding-baseline/
 ├── vendor/                  # 只由 sync-upstream.py 写入：vendor/<category>/<upstream-id>/
 │   ├── interface-design/
 │   │   ├── emilkowalski-skills/    # emil-design-eng
+│   │   ├── heydamir-unslop/        # unslop，以及 LICENSE
 │   │   ├── impeccable/             # impeccable，以及 agents、hooks、LICENSE、NOTICE
 │   │   └── jakubkrehel-skills/     # better-colors、better-layout、better-typography、better-ui、better-writing、explain-interface
 │   ├── motion/

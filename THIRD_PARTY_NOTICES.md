@@ -44,6 +44,15 @@
   - 语言与工程：`write-swift`
 - 未写入 `vendor/` 的根目录文件：`performance-cheatsheet.md`。它不是 skill，其中的动效性能要点已由 `animation-performance` 覆盖。
 
+## heydamir/unslop → `vendor/interface-design/heydamir-unslop/`
+
+- 作者：Damir Sokolovsky（@heydamir）
+- 来源：https://github.com/heydamir/unslop（https://heydamir.design/unslop）
+- 许可证：CC BY 4.0。全文见 `vendor/interface-design/heydamir-unslop/LICENSE`。使用、修改或再分发时需注明 Damir Sokolovsky（@heydamir），并链接回 https://github.com/heydamir/unslop。
+- 用途：把看起来像模型生成的界面改成有产品自己性格的设计，安装为用户级 skill。分类是界面设计。
+- 可选依赖：现场网页快照（`scripts/snapshot.mjs`）需要本机的 Playwright 和 Chromium；故事视频（`scripts/story.mjs`）还需要 ffmpeg。没装时 skill 的其余步骤仍可用。这两项不随仓库安装。
+- 同步范围：`skills/unslop`（含 `references/`，SKILL.md 依赖其中的说明和参考图）和 `LICENSE`。上游 `examples/` 不进入 `vendor/`。
+
 ## 参考整理（未同步进 vendor/）
 
 ### enesozturk/dimensional-drawing
