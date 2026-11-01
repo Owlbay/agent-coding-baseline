@@ -48,9 +48,9 @@
 - 作者：Paul Bakaus
 - 许可证：Apache-2.0（文件 `LICENSE`）
 - 安装范围：项目级，安装到目标项目的 `.claude/`
-- 锁定提交：[`df3a4ab`](https://github.com/pbakaus/impeccable/commit/df3a4abe7d0840d5f60324812c432e00b66a4e75)（`df3a4abe7d0840d5f60324812c432e00b66a4e75`）
-- 上游提交时间：2026-10-30T10:16:26+00:00
-- 同步时间：2026-10-31T04:41:04+00:00
+- 锁定提交：[`e89e3ad`](https://github.com/pbakaus/impeccable/commit/e89e3ada3e875a89ac2c5d33d11e65ebef6fe285)（`e89e3ada3e875a89ac2c5d33d11e65ebef6fe285`）
+- 上游提交时间：2026-11-01T14:26:36+00:00
+- 同步时间：2026-11-01T15:03:43+00:00
 
 | Skill | 分类 |
 | --- | --- |
@@ -115,6 +115,29 @@
 | 路径 | 原因 |
 | --- | --- |
 | `performance-cheatsheet.md` | 不是 skill。其中的动效性能要点已由 animation-performance 覆盖。 |
+
+### heydamir/unslop
+
+- 清单 id：`heydamir-unslop`
+- 仓库：https://github.com/heydamir/unslop
+- 主页：https://heydamir.design/unslop
+- 作者：Damir Sokolovsky (@heydamir)
+- 许可证：CC BY 4.0（文件 `LICENSE`）
+- 许可证说明：CC BY 4.0 要求署名 Damir Sokolovsky（@heydamir），并链接回 https://github.com/heydamir/unslop。
+- 安装范围：用户级，安装到 `~/.claude/skills/<name>/`
+- 锁定提交：[`1d13095`](https://github.com/heydamir/unslop/commit/1d13095e4bef6ad6c74f1dd828d84c4ba309a4dc)（`1d13095e4bef6ad6c74f1dd828d84c4ba309a4dc`）
+- 上游提交时间：2026-11-01T03:05:59+03:00
+- 同步时间：2026-11-01T15:03:44+00:00
+
+| Skill | 分类 |
+| --- | --- |
+| `unslop` | 界面设计（`interface-design`） |
+
+#### 未收录
+
+| 路径 | 原因 |
+| --- | --- |
+| `examples` | 示例页面和配图。skill 的 references/ 已包含 SKILL.md 依赖的说明和参考图，examples/ 不进入 vendor/。 |
 
 ## 参考整理
 

@@ -179,6 +179,29 @@
           "reason": "不是 skill。其中的动效性能要点已由 animation-performance 覆盖。"
         }
       ]
+    },
+    {
+      "id": "heydamir-unslop",
+      "repository": "https://github.com/heydamir/unslop",
+      "homepage": "https://heydamir.design/unslop",
+      "author": "Damir Sokolovsky (@heydamir)",
+      "license": "CC BY 4.0",
+      "licenseFile": "LICENSE",
+      "$licenseNote": "CC BY 4.0 要求署名 Damir Sokolovsky（@heydamir），并链接回 https://github.com/heydamir/unslop。",
+      "paths": {
+        "skills/unslop": "skills/unslop",
+        "LICENSE": "LICENSE"
+      },
+      "skills": [
+        {"name": "unslop", "category": "interface-design"}
+      ],
+      "scope": "user",
+      "excluded": [
+        {
+          "path": "examples",
+          "reason": "示例页面和配图。skill 的 references/ 已包含 SKILL.md 依赖的说明和参考图，examples/ 不进入 vendor/。"
+        }
+      ]
     }
   ],
   "references": [
