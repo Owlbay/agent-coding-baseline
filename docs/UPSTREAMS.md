@@ -14,9 +14,9 @@
 - 作者：Jakub Krehel
 - 许可证：MIT（文件 `LICENSE`）
 - 安装范围：用户级，安装到 `~/.claude/skills/<name>/`
-- 锁定提交：[`592aedc`](https://github.com/jakubkrehel/skills/commit/592aedc44d7d5b3e29740984252902f3e5402a1c)（`592aedc44d7d5b3e29740984252902f3e5402a1c`）
-- 上游提交时间：2026-10-25T09:26:16-04:00
-- 同步时间：2026-10-28T18:14:05+00:00
+- 锁定提交：[`60bf140`](https://github.com/jakubkrehel/skills/commit/60bf140e43c98b248e6594487384ec967e89d98a)（`60bf140e43c98b248e6594487384ec967e89d98a`）
+- 上游提交时间：2026-11-01T20:29:42-05:00
+- 同步时间：2026-11-02T10:56:45+00:00
 
 | Skill | 分类 |
 | --- | --- |
@@ -87,9 +87,9 @@
 - 作者：Emil Kowalski
 - 许可证：MIT（文件 `LICENSE`）
 - 安装范围：用户级，安装到 `~/.claude/skills/<name>/`
-- 锁定提交：[`a81dbca`](https://github.com/emilkowalski/skills/commit/a81dbca07f2217b7103e510c0f13f8d5b017afc9)（`a81dbca07f2217b7103e510c0f13f8d5b017afc9`）
-- 上游提交时间：2026-10-28T19:25:28+01:00
-- 同步时间：2026-10-31T04:41:04+00:00
+- 锁定提交：[`f1090be`](https://github.com/emilkowalski/skills/commit/f1090bec277140d02ed202440185ad9d02ac1490)（`f1090bec277140d02ed202440185ad9d02ac1490`）
+- 上游提交时间：2026-11-02T10:21:52+01:00
+- 同步时间：2026-11-02T10:56:46+00:00
 
 | Skill | 分类 |
 | --- | --- |
@@ -125,9 +125,9 @@
 - 许可证：CC BY 4.0（文件 `LICENSE`）
 - 许可证说明：CC BY 4.0 要求署名 Damir Sokolovsky（@heydamir），并链接回 https://github.com/heydamir/unslop。
 - 安装范围：用户级，安装到 `~/.claude/skills/<name>/`
-- 锁定提交：[`1d13095`](https://github.com/heydamir/unslop/commit/1d13095e4bef6ad6c74f1dd828d84c4ba309a4dc)（`1d13095e4bef6ad6c74f1dd828d84c4ba309a4dc`）
-- 上游提交时间：2026-11-01T03:05:59+03:00
-- 同步时间：2026-11-01T15:03:44+00:00
+- 锁定提交：[`a6f121e`](https://github.com/heydamir/unslop/commit/a6f121eee5f29c2f74976b75456feae8b66afb3a)（`a6f121eee5f29c2f74976b75456feae8b66afb3a`）
+- 上游提交时间：2026-11-01T19:46:09+03:00
+- 同步时间：2026-11-02T10:56:46+00:00
 
 | Skill | 分类 |
 | --- | --- |
