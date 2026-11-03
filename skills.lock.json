@@ -2,9 +2,9 @@
   "upstreams": {
     "jakubkrehel-skills": {
       "repository": "https://github.com/jakubkrehel/skills",
-      "commit": "592aedc44d7d5b3e29740984252902f3e5402a1c",
-      "committedAt": "2026-10-25T09:26:16-04:00",
-      "syncedAt": "2026-10-28T18:14:05+00:00"
+      "commit": "60bf140e43c98b248e6594487384ec967e89d98a",
+      "committedAt": "2026-11-01T20:29:42-05:00",
+      "syncedAt": "2026-11-02T10:56:45+00:00"
     },
     "impeccable": {
       "repository": "https://github.com/pbakaus/impeccable",
@@ -20,15 +20,15 @@
     },
     "emilkowalski-skills": {
       "repository": "https://github.com/emilkowalski/skills",
-      "commit": "a81dbca07f2217b7103e510c0f13f8d5b017afc9",
-      "committedAt": "2026-10-28T19:25:28+01:00",
-      "syncedAt": "2026-10-31T04:41:04+00:00"
+      "commit": "f1090bec277140d02ed202440185ad9d02ac1490",
+      "committedAt": "2026-11-02T10:21:52+01:00",
+      "syncedAt": "2026-11-02T10:56:46+00:00"
     },
     "heydamir-unslop": {
       "repository": "https://github.com/heydamir/unslop",
-      "commit": "1d13095e4bef6ad6c74f1dd828d84c4ba309a4dc",
-      "committedAt": "2026-11-01T03:05:59+03:00",
-      "syncedAt": "2026-11-01T15:03:44+00:00"
+      "commit": "a6f121eee5f29c2f74976b75456feae8b66afb3a",
+      "committedAt": "2026-11-01T19:46:09+03:00",
+      "syncedAt": "2026-11-02T10:56:46+00:00"
     }
   }
 }
