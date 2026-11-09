@@ -14,9 +14,9 @@
 - 作者：Jakub Krehel
 - 许可证：MIT（文件 `LICENSE`）
 - 安装范围：用户级，安装到 `~/.claude/skills/<name>/`
-- 锁定提交：[`60bf140`](https://github.com/jakubkrehel/skills/commit/60bf140e43c98b248e6594487384ec967e89d98a)（`60bf140e43c98b248e6594487384ec967e89d98a`）
-- 上游提交时间：2026-11-01T20:29:42-05:00
-- 同步时间：2026-11-02T10:56:45+00:00
+- 锁定提交：[`659cc4e`](https://github.com/jakubkrehel/skills/commit/659cc4e5b6df90cfe1f306f5ae1c83fa549e075c)（`659cc4e5b6df90cfe1f306f5ae1c83fa549e075c`）
+- 上游提交时间：2026-11-08T19:26:26-05:00
+- 同步时间：2026-11-09T07:19:18+00:00
 
 | Skill | 分类 |
 | --- | --- |
@@ -48,9 +48,9 @@
 - 作者：Paul Bakaus
 - 许可证：Apache-2.0（文件 `LICENSE`）
 - 安装范围：项目级，安装到目标项目的 `.claude/`
-- 锁定提交：[`e89e3ad`](https://github.com/pbakaus/impeccable/commit/e89e3ada3e875a89ac2c5d33d11e65ebef6fe285)（`e89e3ada3e875a89ac2c5d33d11e65ebef6fe285`）
-- 上游提交时间：2026-11-01T14:26:36+00:00
-- 同步时间：2026-11-01T15:03:43+00:00
+- 锁定提交：[`613fbf8`](https://github.com/pbakaus/impeccable/commit/613fbf88e0ef08709eaf238653285f430250c0ea)（`613fbf88e0ef08709eaf238653285f430250c0ea`）
+- 上游提交时间：2026-11-09T03:33:45Z
+- 同步时间：2026-11-09T07:19:20+00:00
 
 | Skill | 分类 |
 | --- | --- |
@@ -87,9 +87,9 @@
 - 作者：Emil Kowalski
 - 许可证：MIT（文件 `LICENSE`）
 - 安装范围：用户级，安装到 `~/.claude/skills/<name>/`
-- 锁定提交：[`f1090be`](https://github.com/emilkowalski/skills/commit/f1090bec277140d02ed202440185ad9d02ac1490)（`f1090bec277140d02ed202440185ad9d02ac1490`）
-- 上游提交时间：2026-11-02T10:21:52+01:00
-- 同步时间：2026-11-02T10:56:46+00:00
+- 锁定提交：[`5206a95`](https://github.com/emilkowalski/skills/commit/5206a950b715e0cabe7043ea0b2304332b91494e)（`5206a950b715e0cabe7043ea0b2304332b91494e`）
+- 上游提交时间：2026-11-08T13:15:47+01:00
+- 同步时间：2026-11-09T07:19:21+00:00
 
 | Skill | 分类 |
 | --- | --- |
@@ -125,9 +125,9 @@
 - 许可证：CC BY 4.0（文件 `LICENSE`）
 - 许可证说明：CC BY 4.0 要求署名 Damir Sokolovsky（@heydamir），并链接回 https://github.com/heydamir/unslop。
 - 安装范围：用户级，安装到 `~/.claude/skills/<name>/`
-- 锁定提交：[`a6f121e`](https://github.com/heydamir/unslop/commit/a6f121eee5f29c2f74976b75456feae8b66afb3a)（`a6f121eee5f29c2f74976b75456feae8b66afb3a`）
-- 上游提交时间：2026-11-01T19:46:09+03:00
-- 同步时间：2026-11-02T10:56:46+00:00
+- 锁定提交：[`97daa3e`](https://github.com/heydamir/unslop/commit/97daa3eb365670ea3f87ed85356cbfcee18105a5)（`97daa3eb365670ea3f87ed85356cbfcee18105a5`）
+- 上游提交时间：2026-11-09T02:16:22+05:00
+- 同步时间：2026-11-09T07:19:21+00:00
 
 | Skill | 分类 |
 | --- | --- |
