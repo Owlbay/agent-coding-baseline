@@ -2,15 +2,15 @@
   "upstreams": {
     "jakubkrehel-skills": {
       "repository": "https://github.com/jakubkrehel/skills",
-      "commit": "60bf140e43c98b248e6594487384ec967e89d98a",
-      "committedAt": "2026-11-01T20:29:42-05:00",
-      "syncedAt": "2026-11-02T10:56:45+00:00"
+      "commit": "659cc4e5b6df90cfe1f306f5ae1c83fa549e075c",
+      "committedAt": "2026-11-08T19:26:26-05:00",
+      "syncedAt": "2026-11-09T07:19:18+00:00"
     },
     "impeccable": {
       "repository": "https://github.com/pbakaus/impeccable",
-      "commit": "e89e3ada3e875a89ac2c5d33d11e65ebef6fe285",
-      "committedAt": "2026-11-01T14:26:36+00:00",
-      "syncedAt": "2026-11-01T15:03:43+00:00"
+      "commit": "613fbf88e0ef08709eaf238653285f430250c0ea",
+      "committedAt": "2026-11-09T03:33:45Z",
+      "syncedAt": "2026-11-09T07:19:20+00:00"
     },
     "vercel-agent-skills": {
       "repository": "https://github.com/vercel-labs/agent-skills",
@@ -20,15 +20,15 @@
     },
     "emilkowalski-skills": {
       "repository": "https://github.com/emilkowalski/skills",
-      "commit": "f1090bec277140d02ed202440185ad9d02ac1490",
-      "committedAt": "2026-11-02T10:21:52+01:00",
-      "syncedAt": "2026-11-02T10:56:46+00:00"
+      "commit": "5206a950b715e0cabe7043ea0b2304332b91494e",
+      "committedAt": "2026-11-08T13:15:47+01:00",
+      "syncedAt": "2026-11-09T07:19:21+00:00"
     },
     "heydamir-unslop": {
       "repository": "https://github.com/heydamir/unslop",
-      "commit": "a6f121eee5f29c2f74976b75456feae8b66afb3a",
-      "committedAt": "2026-11-01T19:46:09+03:00",
-      "syncedAt": "2026-11-02T10:56:46+00:00"
+      "commit": "97daa3eb365670ea3f87ed85356cbfcee18105a5",
+      "committedAt": "2026-11-09T02:16:22+05:00",
+      "syncedAt": "2026-11-09T07:19:21+00:00"
     }
   }
 }
