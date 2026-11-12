@@ -202,6 +202,25 @@
           "reason": "示例页面和配图。skill 的 references/ 已包含 SKILL.md 依赖的说明和参考图，examples/ 不进入 vendor/。"
         }
       ]
+    },
+    {
+      "id": "shadcn-ui",
+      "repository": "https://github.com/shadcn-ui/ui",
+      "homepage": "https://ui.shadcn.com",
+      "author": "shadcn",
+      "license": "MIT",
+      "licenseFile": "LICENSE.md",
+      "$syncNote": "只同步 skills/ 子树。monorepo 的 apps/、packages/、templates/ 等不是 skill，不写入 vendor/。",
+      "paths": {
+        "skills/shadcn": "skills/shadcn",
+        "skills/migrate-radix-to-base": "skills/migrate-radix-to-base",
+        "LICENSE.md": "LICENSE.md"
+      },
+      "skills": [
+        {"name": "shadcn", "category": "frontend-libraries"},
+        {"name": "migrate-radix-to-base", "category": "frontend-libraries"}
+      ],
+      "scope": "user"
     }
   ],
   "references": [

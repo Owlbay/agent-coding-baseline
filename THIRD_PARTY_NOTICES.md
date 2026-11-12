@@ -53,6 +53,17 @@
 - 可选依赖：现场网页快照（`scripts/snapshot.mjs`）需要本机的 Playwright 和 Chromium；故事视频（`scripts/story.mjs`）还需要 ffmpeg。没装时 skill 的其余步骤仍可用。这两项不随仓库安装。
 - 同步范围：`skills/unslop`（含 `references/`，SKILL.md 依赖其中的说明和参考图）和 `LICENSE`。上游 `examples/` 不进入 `vendor/`。
 
+## shadcn-ui/ui → `vendor/frontend-libraries/shadcn-ui/`
+
+- 作者：shadcn，Copyright (c) 2023 shadcn
+- 来源：https://github.com/shadcn-ui/ui（https://ui.shadcn.com），仅同步 `skills/shadcn`、`skills/migrate-radix-to-base` 和 `LICENSE.md`
+- 许可证：MIT。全文见 `vendor/frontend-libraries/shadcn-ui/LICENSE.md`。上游仓库的许可证文件名是 `LICENSE.md`，不是 `LICENSE`。
+- 用途：安装为用户级 skill。分类是前端库。
+  - `shadcn`：用 CLI 添加、查找、调试和组合 shadcn/ui 组件，并接上注册表、预设和设计系统
+  - `migrate-radix-to-base`：把组件和调用方从 Radix UI 迁到 Base UI
+- 同步范围：`skills/` 子树（含 rules、assets、scripts、evals，以及 skill 内的 `agents/openai.yml`）。monorepo 的 `apps/`、`packages/`、`templates/` 等不进入 `vendor/`。
+- 运行时：skill 按项目的包管理器调用 shadcn CLI，CLI 不入库。
+
 ## 参考整理（未同步进 vendor/）
 
 ### enesozturk/dimensional-drawing
