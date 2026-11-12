@@ -29,6 +29,12 @@
       "commit": "97daa3eb365670ea3f87ed85356cbfcee18105a5",
       "committedAt": "2026-11-09T02:16:22+05:00",
       "syncedAt": "2026-11-09T07:19:21+00:00"
+    },
+    "shadcn-ui": {
+      "repository": "https://github.com/shadcn-ui/ui",
+      "commit": "dd41d19e2f80ff6891951f7ced74c2c9a650b065",
+      "committedAt": "2026-11-11T13:04:13+04:00",
+      "syncedAt": "2026-11-12T11:00:25+00:00"
     }
   }
 }

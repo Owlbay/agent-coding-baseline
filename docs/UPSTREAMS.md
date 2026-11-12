@@ -139,6 +139,27 @@
 | --- | --- |
 | `examples` | 示例页面和配图。skill 的 references/ 已包含 SKILL.md 依赖的说明和参考图，examples/ 不进入 vendor/。 |
 
+### shadcn-ui/ui
+
+- 清单 id：`shadcn-ui`
+- 仓库：https://github.com/shadcn-ui/ui
+- 主页：https://ui.shadcn.com
+- 作者：shadcn
+- 许可证：MIT（文件 `LICENSE.md`）
+- 安装范围：用户级，安装到 `~/.claude/skills/<name>/`
+- 锁定提交：[`dd41d19`](https://github.com/shadcn-ui/ui/commit/dd41d19e2f80ff6891951f7ced74c2c9a650b065)（`dd41d19e2f80ff6891951f7ced74c2c9a650b065`）
+- 上游提交时间：2026-11-11T13:04:13+04:00
+- 同步时间：2026-11-12T11:00:25+00:00
+
+| Skill | 分类 |
+| --- | --- |
+| `shadcn` | 前端库（`frontend-libraries`） |
+| `migrate-radix-to-base` | 前端库（`frontend-libraries`） |
+
+#### 未收录
+
+无。
+
 ## 参考整理
 
 这些资料不进 `vendor/`，不锁定提交，不由 `scripts/sync-upstream.py` 安装。

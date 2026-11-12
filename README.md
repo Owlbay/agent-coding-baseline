@@ -90,6 +90,10 @@ Agent 编程（Claude Code / Codex）的个人基准仓库：统一个人偏好�
 | --- | --- | --- | --- |
 | pick-ui-library | [emilkowalski/skills](https://github.com/emilkowalski/skills) | 按 Emil 的清单为当前任务选前端库 | 用户级 |
 | ask-sonner | [emilkowalski/skills](https://github.com/emilkowalski/skills) | 安装、样式化和排查 Sonner toast | 用户级 |
+| shadcn | [shadcn-ui/ui](https://github.com/shadcn-ui/ui) | 用 shadcn CLI 添加、查找和组合组件，并接上注册表、预设和设计系统 | 用户级 |
+| migrate-radix-to-base | [shadcn-ui/ui](https://github.com/shadcn-ui/ui) | 把 shadcn 组件和调用方从 Radix UI 迁到 Base UI | 用户级 |
+
+`shadcn` 和 `migrate-radix-to-base` 只取自该 monorepo 的 `skills/`。`apps/`、`packages/`、`templates/` 不进入 `vendor/`。运行时按项目的包管理器调用 shadcn CLI（`npx shadcn@latest`，或对应的 pnpm / bun），CLI 本身不入库。
 
 ### 语言与工程
 
@@ -129,7 +133,8 @@ agent-coding-baseline/
 │   │   ├── emilkowalski-skills/    # prototype
 │   │   └── jakubkrehel-skills/     # variant
 │   ├── frontend-libraries/
-│   │   └── emilkowalski-skills/    # ask-sonner、pick-ui-library
+│   │   ├── emilkowalski-skills/    # ask-sonner、pick-ui-library
+│   │   └── shadcn-ui/              # migrate-radix-to-base、shadcn；许可证在 LICENSE.md
 │   └── language/
 │       └── emilkowalski-skills/    # write-swift
 ├── skills.json              # 上游清单：仓库、许可证、分类、同步路径、安装范围
