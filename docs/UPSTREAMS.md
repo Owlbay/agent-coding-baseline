@@ -14,9 +14,9 @@
 - 作者：Jakub Krehel
 - 许可证：MIT（文件 `LICENSE`）
 - 安装范围：用户级，安装到 `~/.claude/skills/<name>/`
-- 锁定提交：[`659cc4e`](https://github.com/jakubkrehel/skills/commit/659cc4e5b6df90cfe1f306f5ae1c83fa549e075c)（`659cc4e5b6df90cfe1f306f5ae1c83fa549e075c`）
-- 上游提交时间：2026-11-08T19:26:26-05:00
-- 同步时间：2026-11-09T07:19:18+00:00
+- 锁定提交：[`a72290d`](https://github.com/jakubkrehel/skills/commit/a72290d140249813898ba8648becf6415abcb059)（`a72290d140249813898ba8648becf6415abcb059`）
+- 上游提交时间：2026-11-12T15:20:43-05:00
+- 同步时间：2026-11-16T01:04:03+00:00
 
 | Skill | 分类 |
 | --- | --- |
@@ -48,9 +48,9 @@
 - 作者：Paul Bakaus
 - 许可证：Apache-2.0（文件 `LICENSE`）
 - 安装范围：项目级，安装到目标项目的 `.claude/`
-- 锁定提交：[`613fbf8`](https://github.com/pbakaus/impeccable/commit/613fbf88e0ef08709eaf238653285f430250c0ea)（`613fbf88e0ef08709eaf238653285f430250c0ea`）
-- 上游提交时间：2026-11-09T03:33:45Z
-- 同步时间：2026-11-09T07:19:20+00:00
+- 锁定提交：[`d41d986`](https://github.com/pbakaus/impeccable/commit/d41d9860b0094dcb68030657da63461212835aaa)（`d41d9860b0094dcb68030657da63461212835aaa`）
+- 上游提交时间：2026-11-16T00:41:50Z
+- 同步时间：2026-11-16T01:04:05+00:00
 
 | Skill | 分类 |
 | --- | --- |
@@ -87,9 +87,9 @@
 - 作者：Emil Kowalski
 - 许可证：MIT（文件 `LICENSE`）
 - 安装范围：用户级，安装到 `~/.claude/skills/<name>/`
-- 锁定提交：[`5206a95`](https://github.com/emilkowalski/skills/commit/5206a950b715e0cabe7043ea0b2304332b91494e)（`5206a950b715e0cabe7043ea0b2304332b91494e`）
-- 上游提交时间：2026-11-08T13:15:47+01:00
-- 同步时间：2026-11-09T07:19:21+00:00
+- 锁定提交：[`64eb3de`](https://github.com/emilkowalski/skills/commit/64eb3deb9a5fbfa041faf783e0bc3fd635872e9c)（`64eb3deb9a5fbfa041faf783e0bc3fd635872e9c`）
+- 上游提交时间：2026-11-15T13:42:50+01:00
+- 同步时间：2026-11-16T01:04:06+00:00
 
 | Skill | 分类 |
 | --- | --- |
@@ -125,9 +125,9 @@
 - 许可证：CC BY 4.0（文件 `LICENSE`）
 - 许可证说明：CC BY 4.0 要求署名 Damir Sokolovsky（@heydamir），并链接回 https://github.com/heydamir/unslop。
 - 安装范围：用户级，安装到 `~/.claude/skills/<name>/`
-- 锁定提交：[`97daa3e`](https://github.com/heydamir/unslop/commit/97daa3eb365670ea3f87ed85356cbfcee18105a5)（`97daa3eb365670ea3f87ed85356cbfcee18105a5`）
-- 上游提交时间：2026-11-09T02:16:22+05:00
-- 同步时间：2026-11-09T07:19:21+00:00
+- 锁定提交：[`620163e`](https://github.com/heydamir/unslop/commit/620163eedb3529d9cd23a3994ed8d287d06f760d)（`620163eedb3529d9cd23a3994ed8d287d06f760d`）
+- 上游提交时间：2026-11-15T05:55:18+05:00
+- 同步时间：2026-11-16T01:04:06+00:00
 
 | Skill | 分类 |
 | --- | --- |
@@ -147,9 +147,9 @@
 - 作者：shadcn
 - 许可证：MIT（文件 `LICENSE.md`）
 - 安装范围：用户级，安装到 `~/.claude/skills/<name>/`
-- 锁定提交：[`dd41d19`](https://github.com/shadcn-ui/ui/commit/dd41d19e2f80ff6891951f7ced74c2c9a650b065)（`dd41d19e2f80ff6891951f7ced74c2c9a650b065`）
-- 上游提交时间：2026-11-11T13:04:13+04:00
-- 同步时间：2026-11-12T11:00:25+00:00
+- 锁定提交：[`e62c943`](https://github.com/shadcn-ui/ui/commit/e62c9435fff729a175f38983dee73b2cb4f6a069)（`e62c9435fff729a175f38983dee73b2cb4f6a069`）
+- 上游提交时间：2026-11-13T14:57:41+04:00
+- 同步时间：2026-11-16T01:04:08+00:00
 
 | Skill | 分类 |
 | --- | --- |
